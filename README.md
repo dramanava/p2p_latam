@@ -1,6 +1,7 @@
 <h1 align="center">P2P LATAM</h1>
 <p align="center"><b>A calm, trustworthy way to trade USDT for pesos — inside Telegram</b><br>
 Product design case study · interactive prototype<br>
+<i>A personal vibe-coding project: I design the product and direct AI to build it.</i><br>
 by <b>Diana Romanova</b> · <a href="https://www.linkedin.com/in/ramanavad/">LinkedIn</a> · <a href="https://t.me/ramanavad">Telegram</a></p>
 
 <p align="center">
@@ -16,7 +17,7 @@ by <b>Diana Romanova</b> · <a href="https://www.linkedin.com/in/ramanavad/">Lin
 | **Platform** | Telegram Mini App (mobile, dark theme) |
 | **Market** | Argentina — USDT ⇄ ARS at the "blue dollar" rate |
 | **Status** | Interactive prototype with mocked data (no backend) |
-| **Built with** | React prototype implemented together with Claude Code; versioned and published with GitHub |
+| **Built with** | Vibe coding: I direct Claude Code through prompts, review each result in the browser and iterate. React + Vite, versioned on GitHub, published with GitHub Actions and Pages |
 
 ## Context
 
@@ -75,6 +76,25 @@ Colors, type scale, radii and components are documented above and available as c
 - **Design docs next to the code.** Flow, design system, tokens and a design log live in the repository.
 - **Every push is published.** GitHub Actions builds the prototype and deploys it to GitHub Pages, so the live link always matches the latest design.
 
+## How I work with AI
+
+This is a personal vibe-coding project. The goal is to show how a product designer can take an idea to a working, shareable prototype by directing AI.
+
+- **I own the product and design decisions.** Concept, flows, visual language and copy are mine. The AI writes the React code that implements them.
+- **I work in small, specific iterations.** Each prompt changes one thing (spacing, a button state, a sheet behaviour). The design log shows how the UI evolved this way.
+- **I review in the real thing.** I test every build in the browser, report bugs with screenshots (a broken Buy/Sell switch, clipped content, inconsistent screen heights) and ask for fixes.
+- **I bring my own assets.** The 3D illustrations are mine and are wired into the screens exactly as designed.
+- **I ship it.** The project lives in a GitHub repository, is built and published automatically with GitHub Actions and Pages, and its next steps are tracked as issues.
+
+## Technical notes
+
+- **Stack:** React 18, Vite, Tailwind CSS (utility layer only), lucide-react.
+- **Structure:** the whole UI is one component, `src/components/CryptoApp.jsx`, with a shared color palette object. That is deliberate for a prototype: it is easy to read and change.
+- **Data:** all balances, rates, transactions and addresses are mocked in the code. No backend, no real blockchain calls.
+- **Assets:** illustrations are optimised PNGs in `public/assets`, so the bundle is about 190 kB.
+- **Deploy:** every push to `main` builds the app and publishes it to GitHub Pages (`.github/workflows/deploy.yml`).
+- **For production, I would add:** a component split per screen, a typed API layer, tests for the withdraw validation, i18n (es-AR) and an accessibility pass. The first steps are in the [issues](https://github.com/Dramanava/p2p_latam/issues).
+
 ## What I would validate next
 
 - Usability test of the withdraw flow with first-time crypto users.
@@ -94,4 +114,4 @@ React 18 · Vite · Tailwind CSS · lucide-react. The prototype lives in [`src/c
 ## Credits
 
 Product concept, UX flows and visual design: **Diana Romanova** ([LinkedIn](https://www.linkedin.com/in/ramanavad/) · [Telegram](https://t.me/ramanavad) · [GitHub](https://github.com/Dramanava)).
-The prototype is implemented in React together with [Claude Code](https://claude.com/claude-code) (AI pair programming).
+The prototype is a vibe-coding project: Diana directs, [Claude Code](https://claude.com/claude-code) writes the React implementation.
