@@ -83,7 +83,7 @@ This is a personal vibe-coding project. The goal is to show how a product design
 - **I own the product and design decisions.** Concept, flows, visual language and copy are mine. The AI writes the React code that implements them.
 - **I work in small, specific iterations.** Each prompt changes one thing (spacing, a button state, a sheet behaviour). The design log shows how the UI evolved this way.
 - **I review in the real thing.** I test every build in the browser, report bugs with screenshots (a broken Buy/Sell switch, clipped content, inconsistent screen heights) and ask for fixes.
-- **I bring my own assets.** The 3D illustrations are mine and are wired into the screens exactly as designed.
+- **I supply the visual assets.** I provide the 3D illustrations and specify where and how large they appear on each screen.
 - **I ship it.** The project lives in a GitHub repository, is built and published automatically with GitHub Actions and Pages, and its next steps are tracked as issues.
 
 ## Technical notes
