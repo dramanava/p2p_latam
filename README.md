@@ -1,6 +1,7 @@
 <h1 align="center">P2P LATAM</h1>
 <p align="center"><b>USDT / ARS exchange — Telegram Mini App prototype</b><br>
-Product and UI design · React</p>
+Product and UI design · React<br>
+by <b>Diana Romanova</b> · <a href="https://www.linkedin.com/in/ramanavad/">LinkedIn</a> · <a href="https://t.me/ramanavad">Telegram</a></p>
 
 <p align="center">
   <a href="https://dramanava.github.io/p2p_latam/"><b>▶ Open the live demo</b></a>
@@ -68,5 +69,5 @@ The UI lives in [`src/components/CryptoApp.jsx`](src/components/CryptoApp.jsx).
 
 ## Credits
 
-Product concept, UX flows and visual design: [@Dramanava](https://github.com/Dramanava).
+Product concept, UX flows and visual design: **Diana Romanova** ([LinkedIn](https://www.linkedin.com/in/ramanavad/) · [Telegram](https://t.me/ramanavad) · [GitHub](https://github.com/Dramanava)).
 Implemented in React together with [Claude Code](https://claude.com/claude-code) (AI pair programming).
