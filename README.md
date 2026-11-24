@@ -1,54 +1,72 @@
-# P2P LATAM — USDT/ARS exchange
+<h1 align="center">P2P LATAM</h1>
+<p align="center"><b>USDT / ARS exchange — Telegram Mini App prototype</b><br>
+Product and UI design · React</p>
 
-A mobile-first **P2P crypto exchange prototype for the Argentine market**, designed as a **Telegram Mini App**. Users buy and sell USDT for Argentine pesos at the blue-dollar rate, withdraw to external wallets, and receive funds via QR code.
+<p align="center">
+  <a href="https://dramanava.github.io/p2p_latam/"><b>▶ Open the live demo</b></a>
+  <br><sub>Best on a phone, or in a narrow browser window</sub>
+</p>
 
-**[▶ Live demo](https://dramanava.github.io/p2p_latam/)** — best viewed on a phone or in a narrow browser window.
+<p align="center"><img src="docs/hero.png" alt="P2P LATAM app screens"></p>
 
-> This is a UI/UX prototype. All data (balance, rate, transactions, addresses) is mocked; there is no backend or real blockchain connection.
+## About
 
-## Screens
+In Argentina many people swap dollars for pesos at the informal "blue dollar" rate, and P2P trading of USDT has become one of the most common ways to do it. P2P LATAM is a design exploration of that experience as a **Telegram Mini App**: a simple, trustworthy flow for buying, selling and moving USDT without leaving the chat.
+
+This is a **UI/UX prototype**. All data (balance, rate, transactions, addresses) is mocked; there is no backend or blockchain connection.
+
+## The flow
+
+**Onboarding** — three short stories and a Face ID / PIN step.
 
 <table>
   <tr>
-    <td align="center"><img src="docs/01-onboarding.png" width="180"><br><sub>Onboarding</sub></td>
-    <td align="center"><img src="docs/03-security.png" width="180"><br><sub>Security setup</sub></td>
-    <td align="center"><img src="docs/04-home.png" width="180"><br><sub>Dashboard</sub></td>
-    <td align="center"><img src="docs/05-buy.png" width="180"><br><sub>Buy / Sell</sub></td>
-    <td align="center"><img src="docs/06-review-order.png" width="180"><br><sub>Review order</sub></td>
-  </tr>
-  <tr>
-    <td align="center"><img src="docs/07-success.png" width="180"><br><sub>Order placed</sub></td>
-    <td align="center"><img src="docs/09-withdraw.png" width="180"><br><sub>Withdraw</sub></td>
-    <td align="center"><img src="docs/10-receive.png" width="180"><br><sub>Receive (QR)</sub></td>
-    <td align="center"><img src="docs/02-escrow.png" width="180"><br><sub>Escrow onboarding</sub></td>
-    <td></td>
+    <td align="center"><img src="docs/01-onboarding.png" width="200"><br><sub>Private by design</sub></td>
+    <td align="center"><img src="docs/02-escrow.png" width="200"><br><sub>Escrow protection</sub></td>
+    <td align="center"><img src="docs/03-security.png" width="200"><br><sub>Lock it down</sub></td>
   </tr>
 </table>
 
-## What it covers
+**Trade** — pick Buy or Sell, enter an amount, choose how to pay, review, confirm.
 
-- **Onboarding** — three story-style slides (privacy, live rate, escrow protection) and a Face ID / PIN setup step.
-- **Dashboard** — balance in USDT/ARS, live USDT/ARS rate, recent P2P activity.
-- **Buy / Sell flow** — amount input with live ARS equivalent, payment method selection (bank transfer, Mercado Pago, cash), order review and confirmation.
-- **Withdraw** — network selector (TRC-20 / ERC-20 / BEP-20), address validation, recent addresses, fee breakdown, discard confirmation.
-- **Receive** — network selector, QR code, copy-address action.
-- **Telegram-ready layout** — fixed 100dvh viewport, safe-area spacing, bottom sheets that close on outside tap.
+<table>
+  <tr>
+    <td align="center"><img src="docs/04-home.png" width="200"><br><sub>Dashboard</sub></td>
+    <td align="center"><img src="docs/05-buy.png" width="200"><br><sub>Buy / Sell</sub></td>
+    <td align="center"><img src="docs/06-review-order.png" width="200"><br><sub>Review order</sub></td>
+    <td align="center"><img src="docs/07-success.png" width="200"><br><sub>Order placed</sub></td>
+  </tr>
+</table>
+
+**Transfer** — withdraw to an external wallet, or receive with a QR code.
+
+<table>
+  <tr>
+    <td align="center"><img src="docs/09-withdraw.png" width="200"><br><sub>Withdraw</sub></td>
+    <td align="center"><img src="docs/10-receive.png" width="200"><br><sub>Receive</sub></td>
+  </tr>
+</table>
 
 ## Design decisions
 
-- Dark, minimalist UI with no borders — separation through surface color and spacing.
-- One clear primary action per screen (white button), blue reserved for selection and active state.
-- 3D illustrations for onboarding and key states (success, security, warning).
+- **One clear action per screen.** A single white primary button; blue is reserved for selection and active state, so it always means "this is chosen".
+- **No borders.** Structure comes from surface tone and spacing, which keeps the dark UI calm and readable.
+- **Money-safe interactions.** Network selector with a wrong-network warning, address validation, a review step before every confirmation, and a discard sheet instead of silently losing input.
+- **Built for Telegram.** Fixed full-height viewport, safe-area spacing, bottom sheets that close on an outside tap, consistent bottom action placement on every screen.
+- **Warm illustrations.** 3D objects (coin, lock, thumbs-up) soften a topic that can feel intimidating for first-time users.
 
 ## Tech
 
-React 18 · Vite · Tailwind CSS · lucide-react. Inline styles with a single color palette object; no UI kit.
-
-## Run locally
+React 18 · Vite · Tailwind CSS · lucide-react. The UI is a single component with a shared color palette; no UI kit.
 
 ```bash
 npm install
 npm run dev
 ```
 
-The UI lives in `src/components/CryptoApp.jsx`, rendered by `src/pages/Index.tsx`.
+The UI lives in [`src/components/CryptoApp.jsx`](src/components/CryptoApp.jsx).
+
+## Credits
+
+Product concept, UX flows and visual design: [@Dramanava](https://github.com/Dramanava).
+Implemented in React together with [Claude Code](https://claude.com/claude-code) (AI pair programming).
